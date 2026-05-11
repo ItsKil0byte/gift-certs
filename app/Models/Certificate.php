@@ -37,4 +37,9 @@ class Certificate extends Model
     {
         return $this->hasOne(SendSchedule::class);
     }
+
+    public function payment(): HasOne
+    {
+        return $this->hasOne(Payment::class);
+    }
 }
