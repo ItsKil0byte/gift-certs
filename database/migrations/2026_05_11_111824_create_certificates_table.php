@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('certificates', function (Blueprint $table) {
             $table->id();
             $table->string('promo_code')->unique()->nullable();
-            $table->uuid('hash');
+            $table->uuid('hash')->unique();
             $table->foreignIdFor(Design::class)->nullable()->constrained();
             $table->string('custom_image_path', length: 255)->nullable();
             $table->foreignIdFor(Nominal::class)->nullable()->constrained();
