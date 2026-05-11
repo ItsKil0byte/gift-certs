@@ -26,7 +26,6 @@ return new class extends Migration
             $table->string('sender_phone')->nullable();
             $table->string('receiver_email');
             $table->text('message')->nullable();
-            // Сделать ENUMs?
             $table->string('status', length: 255)->default('pending');
             $table->timestamps();
         });

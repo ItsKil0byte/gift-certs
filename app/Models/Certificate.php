@@ -2,10 +2,12 @@
 
 namespace App\Models;
 
+use App\Enums\CertificateStatus;
 use Illuminate\Database\Eloquent\Attributes\Unguarded;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
+use Override;
 
 #[Unguarded]
 class Certificate extends Model
@@ -28,5 +30,13 @@ class Certificate extends Model
     public function payment(): HasOne
     {
         return $this->hasOne(Payment::class);
+    }
+
+    #[Override]
+    protected function casts(): array
+    {
+        return [
+            'status' => CertificateStatus::class,
+        ];
     }
 }

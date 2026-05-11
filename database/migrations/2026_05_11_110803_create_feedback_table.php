@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('feedback', function (Blueprint $table) {
             $table->id();
-            // Сделать ENUMs?
             $table->string('type', length: 255)->default('purchase');
             $table->string('name');
             $table->string('email');

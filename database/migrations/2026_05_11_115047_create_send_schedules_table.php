@@ -16,7 +16,6 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(Certificate::class)->unique()->constrained()->onDelete('cascade');
             $table->timestamp('send_at')->nullable();
-            // Сделать ENUMs?
             $table->string('status', length: 255)->default('pending');
             $table->timestamps();
         });

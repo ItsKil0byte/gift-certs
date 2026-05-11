@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('payment_url', length: 255);
             $table->string('provider', length: 255);
             $table->string('payment_id', length: 255);
-            // Сделать ENUMs?
             $table->string('status', length: 255);
             $table->integer('amount');
             $table->json('raw_response');
