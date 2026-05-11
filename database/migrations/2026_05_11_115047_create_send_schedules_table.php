@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('send_schedules', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Certificate::class)->unique();
+            $table->foreignIdFor(Certificate::class)->unique()->constrained()->onDelete('cascade');
             $table->timestamp('send_at')->nullable();
             // Сделать ENUMs?
             $table->string('status', length: 255)->default('pending');

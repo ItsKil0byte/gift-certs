@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Certificate::class)->unique();
+            $table->foreignIdFor(Certificate::class)->unique()->constrained()->onDelete('cascade');
             $table->string('payment_url', length: 255);
             $table->string('provider', length: 255);
             $table->string('payment_id', length: 255);

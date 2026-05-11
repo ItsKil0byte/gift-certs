@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->string('promo_code')->unique()->nullable();
             $table->uuid('hash');
-            $table->foreignIdFor(Design::class)->nullable();
+            $table->foreignIdFor(Design::class)->nullable()->constrained();
             $table->string('custom_image_path', length: 255)->nullable();
-            $table->foreignIdFor(Nominal::class)->nullable();
+            $table->foreignIdFor(Nominal::class)->nullable()->constrained();
             $table->integer('custom_nominal_value')->nullable();
             $table->string('sender_name');
             $table->string('sender_email');
