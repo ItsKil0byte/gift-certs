@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 #[Fillable(
@@ -23,14 +24,14 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 )]
 class Certificate extends Model
 {
-    public function design(): HasOne
+    public function design(): BelongsTo
     {
-        return $this->hasOne(Design::class);
+        return $this->belongsTo(Design::class);
     }
 
-    public function nominal(): HasOne
+    public function nominal(): BelongsTo
     {
-        return $this->hasOne(Nominal::class);
+        return $this->belongsTo(Nominal::class);
     }
 
     public function sendSchedule(): HasOne 
