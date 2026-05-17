@@ -5,7 +5,7 @@
 
         <div class="flex flex-col gap-4">
             <h3>1. Сумма</h3>
-            <div class="grid grid-cols-5 gap-4">
+            <div class="grid grid-cols-3 md:grid-cols-4 xl:grid-cols-5 gap-4">
                 <div v-for="nominal in nominals" :key="nominal.id" @click="emit('select-nominal', nominal.id)"
                     :class="selectedNominalId === nominal.id ? 'border-2 border-indigo-500 bg-indigo-100' : 'border border-slate-300'"
                     class="w-full p-4 rounded-lg flex items-center justify-center cursor-pointer transition-colors">
@@ -30,7 +30,7 @@
             <input class="border border-slate-300 rounded p-4" type="text" v-model="formData.sender_name"
                 placeholder="...">
 
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="flex flex-col gap-2">
                     <h4 class="text-slate-500">Телефон отправителя</h4>
                     <input class="border border-slate-300 rounded p-4" type="tel" v-model="formData.sender_phone"
@@ -72,7 +72,8 @@
                 placeholder="Напишите несколько пожеланий для получателя"></textarea>
         </div>
 
-        <div class="grid grid-cols-[2fr_1fr] gap-4 bg-indigo-100 p-6 rounded-lg border-2 border-indigo-200">
+        <div
+            class="grid grid-cols-1 md:grid-cols-[2fr_1fr] gap-4 bg-indigo-100 p-6 rounded-lg border-2 border-indigo-200">
             <div class="flex flex-col gap-2">
                 <h4 class="text-2xl font-black">Итого:</h4>
                 <div class="flex items-center gap-2 text-xl">

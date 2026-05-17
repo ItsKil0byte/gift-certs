@@ -12,7 +12,7 @@
 
             <h2 class="text-xl font-bold mb-4 mt-4">Выберите дизайн</h2>
 
-            <div class="grid grid-cols-4 gap-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-4">
 
                 <div v-for="design in designs" :key="design.id" @click="emit('select-design', design.id)"
                     :class="selectedDesignId === design.id ? 'border-2 border-indigo-500 bg-indigo-100' : ' border border-slate-300'"
