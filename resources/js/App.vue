@@ -1,12 +1,6 @@
 <script setup>
-import axios from 'axios';
+import api from './services/api';
 import { ref, reactive, onMounted, computed } from 'vue';
-
-// TODO: Убрать в отдельный файл
-
-const api = axios.create({
-    baseURL: '/api',
-});
 
 const designs = ref([]);
 const nominals = ref([]);
@@ -56,9 +50,6 @@ onMounted(async () => {
 
         const nominals_response = await api.get('/nominals');
         nominals.value = nominals_response.data.data;
-
-        console.log(designs.value);
-        console.log(nominals.value);
     } catch (error) {
         console.error(error);
     }
