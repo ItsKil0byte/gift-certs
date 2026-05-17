@@ -12,7 +12,7 @@ class StoreCertificateRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,12 +24,12 @@ class StoreCertificateRequest extends FormRequest
     {
         return [
             // Дизайн
-            'design_id' => ['required_without:custom_design', 'prohibits:custom_design', 'exists:designs,id', 'integer'],
-            'custom_design' => ['required_without:design_id', 'prohibits:design_id', 'image', 'max:5120'],
+            'design_id' => ['required_without:custom_design', 'prohibits:custom_design', 'nullable', 'exists:designs,id', 'integer'],
+            'custom_design' => ['required_without:design_id', 'prohibits:design_id', 'image', 'mimes:jpg,jpeg,png', 'nullable', 'max:5120'],
 
             // Номинал
-            'nominal_id' => ['required_without:custom_nominal', 'prohibits:custom_nominal', 'exists:nominals,id', 'integer'],
-            'custom_nominal' => ['required_without:nominal_id', 'prohibits:nominal_id', 'numeric', 'min:0'],
+            'nominal_id' => ['required_without:custom_nominal', 'prohibits:custom_nominal', 'exists:nominals,id', 'nullable', 'integer'],
+            'custom_nominal' => ['required_without:nominal_id', 'prohibits:nominal_id', 'numeric', 'nullable', 'min:0'],
             
             // Контакты
             'sender_name' => ['required', 'string', 'max:255'],
@@ -42,7 +42,7 @@ class StoreCertificateRequest extends FormRequest
 
             // Дата и время
             'send_now' => ['required', 'boolean'],
-            'send_at' => ['required_if:send_now,false', 'date', 'after:now'],
+            'send_at' => ['required_if:send_now,false', 'nullable', 'date', 'after:now'],
         ];
     }
 }
