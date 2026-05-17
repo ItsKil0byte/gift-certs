@@ -1,18 +1,12 @@
 <template>
-    <!-- Footer -->
-    <footer
-        class="flex-none h-64 md:h-48 grid grid-cols-1 md:grid-cols-[200px_1fr_200px] gap-4 bg-white p-6 rounded-xl border-2 border-slate-200">
-        <div
-            class="w-full h-full bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center">
+    <footer class="bg-white p-4 sm:p-6 rounded-xl border-2 border-slate-200">
+        <div class="flex items-center justify-center">
 
-        </div>
-        <div
-            class="w-full h-full bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center">
-            Подвал
-        </div>
-        <div
-            class="w-full h-full bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center">
+            <!-- TODO: Узнать что должно быть здесь -->
 
+            <span class="text-slate-500 text-sm">
+                © {{ new Date().getFullYear() }} Все права защищены
+            </span>
         </div>
     </footer>
 </template>
