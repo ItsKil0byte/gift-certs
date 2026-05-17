@@ -4,7 +4,7 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\DB;
 use App\Models\Certificate;
-use GuzzleHttp\Psr7\UploadedFile;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 
 class CertificateService
@@ -17,9 +17,7 @@ class CertificateService
     public function create(array $data): Certificate
     {
         return DB::transaction(function () use ($data) {
-            // TODO: Проверить как сделаю загрузку на фронте
             if (isset($data['custom_design']) && $data['custom_design'] instanceof UploadedFile) {
-                // Сохраняем файл от пользователя
                 $file = $data['custom_design'];
                 $path = $this->store($file);
             }
