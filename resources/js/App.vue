@@ -1,4 +1,7 @@
 <template>
+
+    <!-- TODO: Разбить на компоненты -->
+
     <div class="flex flex-col bg-slate-50 min-h-screen p-4 gap-4">
         <!-- Header -->
         <header
@@ -29,37 +32,51 @@
 
         <!-- Main -->
         <main class="grow">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
-                <div class="sticky top-4 bg-white p-6 rounded-xl border-2 border-slate-200">
-                    <div
-                        class="w-full aspect-3/2 bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center">
-                        Предварительный просмотр
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+                <div class="lg:col-span-7 relative lg:sticky lg:top-4 flex flex-col">
+
+                    <!-- Preview -->
+                    <div class="bg-white p-6 rounded-xl border-2 border-slate-200">
+                        <h2 class="text-xl font-bold mb-4">Предпросмотр</h2>
+                        <div
+                            class="w-full aspect-3/2 bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center">
+                            Сертификат
+                        </div>
+
+                        <h2 class="text-xl font-bold mb-4 mt-4">Выберите дизайн</h2>
+                        <div
+                            class="h-32 bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center">
+                            Слайдер дизайнов
+                        </div>
                     </div>
                 </div>
-                <div class="bg-white p-6 rounded-xl border-2 border-slate-200 flex flex-col gap-6">
+
+                <div class="lg:col-span-5 bg-white p-6 rounded-xl border-2 border-slate-200 flex flex-col gap-6">
+                    <h2 class="text-xl font-bold">Настроить сертификат</h2>
+
+                    <div
+                        class="h-32 bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center">
+                        1. Номинал
+                    </div>
+
+                    <div
+                        class="h-64 bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center">
+                        2. Контакты
+                    </div>
+
+                    <div
+                        class="h-32 bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center">
+                        3. Дата и время
+                    </div>
+
                     <div
                         class="h-48 bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center">
-                        Дизайны
+                        4. Сообщение
                     </div>
+
                     <div
-                        class="h-32 bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center">
-                        Номиналы
-                    </div>
-                    <div
-                        class="h-64 bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center">
-                        Контакты
-                    </div>
-                    <div
-                        class="h-32 bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center">
-                        Время
-                    </div>
-                    <div
-                        class="h-64 bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center">
-                        Сообщение
-                    </div>
-                    <div
-                        class="h-32 bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex items-center justify-center">
-                        Оплата
+                        class="h-32 bg-indigo-50 rounded-lg border-2 border-indigo-100 flex items-center justify-center text-indigo-900 font-bold">
+                        Итого к оплате и кнопка
                     </div>
                 </div>
             </div>
