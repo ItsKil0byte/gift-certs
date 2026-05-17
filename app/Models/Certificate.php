@@ -22,7 +22,7 @@ class Certificate extends Model
         return $this->belongsTo(Nominal::class);
     }
 
-    public function sendSchedule(): HasOne 
+    public function sendSchedule(): HasOne
     {
         return $this->hasOne(SendSchedule::class);
     }

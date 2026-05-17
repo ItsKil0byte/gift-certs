@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Setting;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class SettingSeeder extends Seeder
@@ -16,16 +15,16 @@ class SettingSeeder extends Seeder
         Setting::insert([
             [
                 'key' => 'logo',
-                'value' => 'logo.png'
+                'value' => 'logo.png',
             ],
             [
                 'key' => 'color',
-                'value' => '#000000'
+                'value' => '#000000',
             ],
             [
                 'key' => 'site_name',
-                'value' => 'Laravel'
-            ]
+                'value' => 'Laravel',
+            ],
         ]);
     }
 }

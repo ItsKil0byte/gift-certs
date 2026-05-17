@@ -17,7 +17,7 @@ class DesignResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'image_path' => $this->image_path
+            'image_path' => $this->image_path,
         ];
     }
 }

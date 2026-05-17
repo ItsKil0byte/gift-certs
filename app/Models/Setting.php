@@ -8,7 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 
 #[Unguarded]
 #[Table(key: 'key', incrementing: false, keyType: 'string')]
-class Setting extends Model
-{
-
-}
+class Setting extends Model {}

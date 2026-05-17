@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             DesignSeeder::class,
             NominalSeeder::class,
-            SettingSeeder::class
+            SettingSeeder::class,
         ]);
     }
 }

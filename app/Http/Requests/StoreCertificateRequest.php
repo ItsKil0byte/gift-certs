@@ -30,7 +30,7 @@ class StoreCertificateRequest extends FormRequest
             // Номинал
             'nominal_id' => ['required_without:custom_nominal', 'prohibits:custom_nominal', 'exists:nominals,id', 'nullable', 'integer'],
             'custom_nominal' => ['required_without:nominal_id', 'prohibits:nominal_id', 'numeric', 'nullable', 'min:0'],
-            
+
             // Контакты
             'sender_name' => ['required', 'string', 'max:255'],
             'sender_email' => ['required', 'email', 'max:255'],

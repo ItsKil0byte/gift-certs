@@ -2,9 +2,9 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Facades\DB;
 use App\Models\Certificate;
 use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class CertificateService
@@ -34,16 +34,16 @@ class CertificateService
                 'sender_email' => $data['sender_email'],
                 'sender_phone' => $data['sender_phone'],
                 'receiver_email' => $data['receiver_email'],
-                'message' => $data['message'] ?? null
+                'message' => $data['message'] ?? null,
             ]);
 
-            if (isset($data['send_now']) && !$data['send_now']) {
+            if (isset($data['send_now']) && ! $data['send_now']) {
                 // Создаём задачу на отправку сертификата
                 $certificate->sendSchedule()->create([
-                    'send_at' => $data['send_at']
+                    'send_at' => $data['send_at'],
                 ]);
             }
-            
+
             return $certificate;
         });
     }

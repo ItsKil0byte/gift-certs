@@ -16,7 +16,7 @@ class CertificateResource extends JsonResource
     {
         return [
             'promo_code' => $this->promo_code,
-            'hash' => $this->hash
+            'hash' => $this->hash,
         ];
     }
 }
