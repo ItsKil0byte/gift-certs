@@ -96,11 +96,13 @@ const submit = async () => {
 
 onMounted(async () => {
     try {
-        const designs_response = await api.get('/designs');
-        designs.value = designs_response.data.data;
+        const [designsResponse, nominalsResponse] = await Promise.all([
+            api.get('/designs'),
+            api.get('/nominals')
+        ]);
 
-        const nominals_response = await api.get('/nominals');
-        nominals.value = nominals_response.data.data;
+        designs.value = designsResponse.data.data;
+        nominals.value = nominalsResponse.data.data;
     } catch (error) {
         console.error(error);
     }
