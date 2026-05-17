@@ -29,7 +29,8 @@
                                 d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <span>Загрузить свой</span>
-                        <input type="file" accept="image/*" class="hidden">
+                        <input type="file" accept="image/*" class="hidden"
+                            @change="emit('custom-design', $event.target.files[0])">
                     </label>
                 </div>
             </div>
@@ -45,7 +46,7 @@ const props = defineProps({
     selectedDesignId: Number,
 });
 
-const emit = defineEmits(['select-design']);
+const emit = defineEmits(['select-design', 'custom-design']);
 
 const currentDesign = computed(() => {
     return props.designs.find(design => design.id === props.selectedDesignId);

@@ -41,7 +41,7 @@ class StoreCertificateRequest extends FormRequest
             'message' => ['nullable', 'string', 'max:1000'],
 
             // Дата и время
-            'send_now' => ['required', 'boolean'],
+            'send_now' => ['required', 'in:true,false'],
             'send_at' => ['required_if:send_now,false', 'nullable', 'date', 'after:now'],
         ];
     }
