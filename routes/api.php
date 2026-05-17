@@ -10,3 +10,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/designs', [PublicController::class, 'getDesigns']);
 Route::get('/nominals', [PublicController::class, 'getNominals']);
+
+Route::post('/certificates', [PublicController::class, 'store']);

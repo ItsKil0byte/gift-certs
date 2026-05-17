@@ -56,7 +56,8 @@ const submit = async () => {
         };
 
         console.log(payload);
-        // TODO: Отправить на сервер
+        const response = await api.post('/certificates', payload);
+        console.log(response);
     } catch (error) {
         console.error(error);
     }
